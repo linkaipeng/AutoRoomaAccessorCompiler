@@ -1,0 +1,38 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.3.72"
+
+    // remote repo url
+    Properties localProperties = new Properties()
+    localProperties.load(project.rootProject.file('./local.properties').newDataInputStream())
+    String remoteRepoUrl = REMOTE_REPO_URL
+    if (localProperties.getProperty('JFROG_SNAPSHOT') == 'true') {
+        remoteRepoUrl = REMOTE_REPO_SNAPSHOT_URL
+    }
+
+    repositories {
+        maven { url remoteRepoUrl }
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:3.4.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.5.4"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
