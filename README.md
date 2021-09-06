@@ -37,7 +37,7 @@ dependencies {
 ## 主 App 使用
 
 ```
-Module1RoomAccessor.onGetDaoCallback = object : Module1RoomAccessor.OnGetDaoCallback {
+TestModuleRoomAccessor.onGetDaoCallback = object : TestModuleRoomAccessor.OnGetDaoCallback {
      override fun onGetModule1Dao(): Module1Dao {
          return DBHelper.db.module1Dao()
      }
