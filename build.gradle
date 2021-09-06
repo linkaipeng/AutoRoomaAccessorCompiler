@@ -2,16 +2,7 @@
 buildscript {
     ext.kotlin_version = "1.3.72"
 
-    // remote repo url
-    Properties localProperties = new Properties()
-    localProperties.load(project.rootProject.file('./local.properties').newDataInputStream())
-    String remoteRepoUrl = REMOTE_REPO_URL
-    if (localProperties.getProperty('JFROG_SNAPSHOT') == 'true') {
-        remoteRepoUrl = REMOTE_REPO_SNAPSHOT_URL
-    }
-
     repositories {
-        maven { url remoteRepoUrl }
         google()
         jcenter()
     }

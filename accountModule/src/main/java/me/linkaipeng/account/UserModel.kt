@@ -1,10 +1,10 @@
-package me.linkaipeng.roomdemo
+package me.linkaipeng.account
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "User")
+@Entity(tableName = "UserTable")
 data class UserModel(
     @PrimaryKey
-    val uid: String = ""
+    val userName: String = ""
 )

@@ -3,5 +3,5 @@ rootProject.name = "RoomDemo"
 include ':app'
 include ':autoRoomAccessorCompiler'
 
-include ':module1'
-include ':testModule'
+include ':accountModule'
+include ':newsModule'

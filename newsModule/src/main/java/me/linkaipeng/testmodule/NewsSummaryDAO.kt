@@ -6,10 +6,10 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 @Dao
-interface TestModule000Dao {
-    @Query("SELECT * FROM TestModule000 LIMIT 1")
-    fun getData(): TestModule000Model
+interface NewsSummaryDAO {
+    @Query("SELECT * FROM NewsSummaryTable LIMIT 1")
+    fun getData(): NewsSummaryModel
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertData(testModel: TestModule000Model)
+    fun insertData(testModel: NewsSummaryModel)
 }

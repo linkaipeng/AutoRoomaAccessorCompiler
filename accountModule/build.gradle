@@ -15,10 +15,9 @@ android {
 
         consumerProguardFiles "consumer-rules.pro"
 
-
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [ROOM_ACCESSOR_NAME_PREFIX: "TestModule"]
+                arguments = [ROOM_ACCESSOR_NAME_PREFIX: "AccountModule"]
             }
         }
     }
@@ -34,8 +33,9 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
     implementation 'androidx.appcompat:appcompat:1.1.0'
+
 
     def room_version = "2.2.2"
     implementation "androidx.room:room-runtime:$room_version"
